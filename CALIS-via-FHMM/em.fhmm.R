@@ -24,7 +24,7 @@ em.fhmm=function(x, maxiter)
 ####################################################################################
    NUM=length(x)
 # precision tolerance level
-   ptol=1e-3
+   ptol=0.002
    niter=0 
 ### initializing model parameters
    pii.new=c(0.6, 0.4)
