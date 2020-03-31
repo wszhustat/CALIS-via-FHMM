@@ -118,17 +118,15 @@ em.fhmm=function(x, maxiter)
          q3_11=sum(gamma[, 4]*(x-mu11)*(x-mu11))
          sd11=sqrt(q3_11/q1_11)
          f11.new=c(mu11, sd11)
-
-         df1=abs(A.old-A.new)
-         df1=abs(B.old-B.new)
-         df2=abs(f01.old-f01.new)
-         df3=abs(f10.old-f10.new)
-         df4=abs(f11.old-f11.new)
-         diff=max(df1,df2,df3,df4)
+     
+         df1=abs(f01.old-f01.new)
+         df2=abs(f10.old-f10.new)
+         df3=abs(f11.old-f11.new)
+         diff=max(df1,df2,df3)
 }
-# f. the final local fdr statistic
+# d. the final local fdr statistic
 lfdr=gamma[, 1]+gamma[, 3]
-# g. return the results of the E-M algorithm
+# e. return the results of the E-M algorithm
 em.var=list(pii=pii.new,piii=piii.new,A=A.new,B=B.new,f01=f01.new,f10=f10.new,f11=f11.new,lfdr=lfdr,ni=niter)
 return (em.var)
 }
